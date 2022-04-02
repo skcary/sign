@@ -1,0 +1,8 @@
+node_modules
+.DS_Store
+dist/
+build/
+.idea/
+temp/
+coverage/
+pnpm-lock.yaml
