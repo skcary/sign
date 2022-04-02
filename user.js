@@ -17,7 +17,7 @@ class User {
   }
 
   handleJoin(name) {
-    if (this.room.getMemberCount() === 2) {
+    if (this.room.getMembersCount() === 2) {
       this.send(JSON.stringify({ type: 'join', state: 'fail' }));
       return;
     }
@@ -25,6 +25,7 @@ class User {
     this.room.join(this);
     this.room.broadcast({
       type: 'note',
+      names: this.room.getMembersName(),
       text: `${this.name} joined "${this.room.name}".`
     });
   }

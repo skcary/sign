@@ -23,22 +23,26 @@ class Room {
     this.members.delete(member);
   }
 
-  getMemberCount() {
+  getMembersCount() {
     return this.members.size;
+  }
+
+  getMembersName() {
+    const membersName = [];
+    for (let member of this.members) {
+      membersName.push(member.name);
+    }
+    return membersName;
   }
 
   broadcast(data) {
     for (let member of this.members) {
-      console.log(member);
-
       member.send(JSON.stringify(data));
     }
   }
 
   broadcastSdp(data, member) {
     for (let m of this.members) {
-      console.log();
-
       if (m !== member) {
         m.send(JSON.stringify(data))
       }
