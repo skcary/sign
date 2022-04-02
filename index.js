@@ -17,10 +17,6 @@ app.ws('/s/:id', (ws, req) => {
       } catch (err) {
         console.error(err);
       }
-      // const obj = JSON.parse(data);
-      // if (obj.type === 'join' && obj.userId) {
-      // }
-
       // wsInstance.getWss().clients.forEach(client => {
       //   if (client !== ws) {
       //     const obj = JSON.parse(data);
@@ -42,7 +38,7 @@ app.ws('/s/:id', (ws, req) => {
 });
 
 app.get('/', (req, res) => {
-  res.send('hello');
+  res.send('hellosign');
 });
 
 app.listen(port, () => {
