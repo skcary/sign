@@ -48,7 +48,7 @@ class User {
       if (msg.type === 'join') this.handleJoin(msg.name);
       else if (msg.type === 'chat') this.handleChat(msg.text);
       else if (['answer', 'answer_ice', 'offer', 'offer_ice'].includes(msg.type)) this.handleSdp(msg);
-      else throw new Error(`bad message: ${msg.type}`);
+      else { }
     } catch (error) {
     }
   }
