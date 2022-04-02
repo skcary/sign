@@ -24,7 +24,8 @@ class User {
     this.name = name;
     this.room.join(this);
     this.room.broadcast({
-      type: 'note',
+      type: 'join',
+      state: 'success',
       names: this.room.getMembersName(),
       text: `${this.name} joined "${this.room.name}".`
     });
@@ -56,7 +57,9 @@ class User {
   handleClose() {
     this.room.leave(this);
     this.room.broadcast({
-      type: 'note',
+      type: 'exit',
+      state: 'success',
+      names: this.room.getMembersName(),
       text: `${this.name} left ${this.room.name}.`
     });
   }
